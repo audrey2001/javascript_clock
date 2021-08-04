@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MY DIGITAL CLOCK</title>
+    <link rel="stylesheet" href="/css/javascript_clock.css">
+    <style>
+        .p_tag{
+            color: white;
+            position:absolute; 
+            height: 230px; 
+            text-shadow: 3px -3px 4px #1AE53A;
+            font-size: 40px;
+            animation: p_tag 1.5s ease-in-out;
+            animation-duration: 3s;
+            animation-iteration-count: unset;
+            animation-play-state: running;
+            animation-direction: alternate;
+           
+        }
+        @keyframes p_tag{
+            from{height: 0px;}
+            to{height: 230px;}
+        }
+    </style>
+</head>
+<body>
+    <p class="p_tag">JAVASCRIPT CLOCK</p>
+    <div class="contanier">
+
+        <div class="contanier_firstchild">
+            <div id="myclock"></div>
+        </div>
+    </div>
+    <script>
+        function showTime(){
+            var date= new Date();
+            var hrs = date.getHours();
+            
+            var min = date.getMinutes();
+            var sec = date.getSeconds();
+            var session = hrs >=12 ? "PM":"AM";
+            
+            if(min<10){
+                min="0"+min;
+            } 
+
+ 
+
+if(hrs < 10){
+    hrs = `0${hrs}`
+} else if(hrs > 12){
+    hrs =`${hrs-12}`
+} else {
+    hrs = hrs
+}
+           
+            var time= `${hrs}:${min}:${sec}${session}`
+            document.getElementById("myclock").innerHTML= time;
+
+        }
+    showTime();
+    setInterval(showTime, 1000);
+    </script>
+</body>
+</html>
+    

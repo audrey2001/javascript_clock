@@ -1,0 +1,49 @@
+body{
+    height: 700px;
+display: flex;
+place-content: center;
+background: black;
+  justify-content: center;
+  align-items: center;  
+}
+
+.contanier{
+    border: 6px solid #1AE53A;
+    height: 100px;
+    width: 370px;
+    cursor: default;
+    background: white;
+    border-radius: 10px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.contanier_firstchild{
+     height: 80px;
+     width: 350px;
+     margin-right: 11px;
+     position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+     margin-left: 10px;
+     background: #E51AC5;
+     text-align: center;
+     border-radius: 10px;
+}
+.contanier .contanier_firstchild{
+    animation: animate 1s linear infinite;
+}
+.contanier .contanier_firstchild #myclock{
+    animation: animate 1s linear infinite;
+    letter-spacing: 10px;
+    font-size: 50px;
+    color: white;
+    padding-left: 10px;
+
+}
+@keyframes animate{100%{
+    filter: hue-rotate(300deg);}
+}
